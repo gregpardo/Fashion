@@ -1,11 +1,9 @@
-#if os(iOS)
-  import UIKit
-
-  public typealias Styleable = UIAppearance
-#elseif os(OSX)
+#if os(OSX)
   import Foundation
-
   public protocol Styleable: NSObjectProtocol {}
+#else
+  import UIKit
+  public typealias Styleable = UIAppearance
 #endif
 
 /// Convenience protocol for all types that could be styled.
